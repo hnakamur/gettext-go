@@ -34,17 +34,17 @@ func TestCallerName(t *testing.T) {
 	if s := testInitCallerName0; s != name {
 		t.Fatalf("expect = %s, got = %s", name, s)
 	}
-	name = `github.com/hnakamur/gettext-go/gettext.init`
+	name = `github.com/hnakamur/gettext-go/gettext.init.1`
 	if s := testInitCallerName1; s != name {
 		t.Fatalf("expect = %s, got = %s", name, s)
 	}
-	name = `github.com/hnakamur/gettext-go/gettext.init`
+	name = `github.com/hnakamur/gettext-go/gettext.init.2`
 	if s := testInitCallerName2; s != name {
 		t.Fatalf("expect = %s, got = %s", name, s)
 	}
 
 	// tInit -> gettext.func
-	name = `github.com/hnakamur/gettext-go/gettext.func`
+	name = `github.com/hnakamur/gettext-go/gettext.glob.func1`
 	if s := tCaller(0); s != name {
 		t.Fatalf("expect = %s, got = %s", name, s)
 	}
@@ -73,14 +73,14 @@ func TestCallerName(t *testing.T) {
 
 	// closure
 	func() {
-		name = `github.com/hnakamur/gettext-go/gettext.func`
+		name = `github.com/hnakamur/gettext-go/gettext.TestCallerName.func1`
 		if s := callerName(1); s != name {
 			t.Fatalf("expect = %s, got = %s", name, s)
 		}
 	}()
 	func() {
 		func() {
-			name = `github.com/hnakamur/gettext-go/gettext.func`
+			name = `github.com/hnakamur/gettext-go/gettext.TestCallerName.func2.1`
 			if s := callerName(1); s != name {
 				t.Fatalf("expect = %s, got = %s", name, s)
 			}
