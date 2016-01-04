@@ -7,7 +7,7 @@ Package plural provides standard plural formulas.
 
 Examples:
 	import (
-		"code.google.com/p/gettext-go/gettext/plural"
+		"github.com/hnakamur/gettext-go/gettext/plural"
 	)
 
 	func main() {

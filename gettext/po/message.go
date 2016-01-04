@@ -17,13 +17,15 @@ import (
 // and its corresponding translation.
 //
 // See http://www.gnu.org/software/gettext/manual/html_node/PO-Files.html
+//     http://pology.nedohodnik.net/doc/user/en_US/ch-poformat.html
 type Message struct {
-	Comment               // Coments
+	Comment               // Comments
 	MsgContext   string   // msgctxt context
 	MsgId        string   // msgid untranslated-string
 	MsgIdPlural  string   // msgid_plural untranslated-string-plural
 	MsgStr       string   // msgstr translated-string
 	MsgStrPlural []string // msgstr[0] translated-string-case-0
+	Obsolete     bool     // obsolete message starts with "#~"
 }
 
 type byMessages []Message
